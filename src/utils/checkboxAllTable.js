@@ -1,4 +1,12 @@
 export const checkAllTable = (table) => {
+    if(!table) {
+        return;
+    }
+
+    if(!table instanceof HTMLTableElement) {
+        throw new Error('The provided element is not a table');
+    }
+    
     const firstCheckbox = table.querySelector('thead input[type="checkbox"]');
     const checkboxes = table.querySelectorAll('tbody input[type="checkbox"]');
 
