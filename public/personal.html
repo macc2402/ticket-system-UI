@@ -1,108 +1,54 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="en">
+<html data-theme="light" lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soportes</title>
-    <link rel="stylesheet" href="../src/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+
 <div class="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col gap-7 min-h-screen">
-        <!-- Page content here -->
-
         <div class="flex items-center w-full justify-center">
             <label id="themeSwap" class="flex cursor-pointer gap-2 lg:absolute lg:top-2.5 lg:right-22 p-0 my-[.75em]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5" />
-                <path
-                  d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
-              </svg>
-              <input type="checkbox" value="synthwave" class="toggle theme-controller" />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
+                <input type="checkbox" value="synthwave" class="toggle theme-controller" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             </label>
         </div>
 
         <div class="absolute top-0 right-0 p-0 m-[.55em]">
-          <img src="img/logo edificio sin fondo.png" alt="Logo" class="w-15 h-15 object-contain rounded-xl" />
+            <img src="https://seeklogo.com/images/V/Venezuela-logo-C399F39F42-seeklogo.com.png" alt="Logo" class="w-16 h-16 object-contain rounded-xl" />
         </div>
       
         <label for="my-drawer-2" class="btn btn-circle swap swap-rotate drawer-button lg:hidden absolute top-0 left-0 ">
-          <!-- this hidden checkbox controls the state -->
-          <input type="checkbox" class="" />
-
-          <!-- hamburger icon -->
-          <svg
-            class="swap-off fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 512 512">
-            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-          </svg>
-
-          <!-- close icon -->
-          <svg
-            class="swap-on fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 512 512">
-            <polygon
-              points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
-          </svg>
+            <input type="checkbox" class="" />
+            <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg>
+            <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" /></svg>
         </label>
 
         <h1 class="text-3xl font-bold text-center my-[1em]">Listado del personal</h1>
 
-    <div class="flex flex-col lg:flex-row items-center w-full gap-5 justify-evenly">
-
-        <div>
-            <button class="btn btn-success">Registrar nuevo empleado</button>
+        <div class="flex flex-col lg:flex-row items-center w-full gap-5 justify-evenly">
+            <div>
+                <button id="openModalBtn" class="btn btn-success">Registrar nuevo empleado</button>
+            </div>
+            <div class="dropdown dropdown-right">
+                <div tabindex="0" role="button" class="btn m-1">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 2v1.67l-5 4.759V14H6V8.429l-5-4.76V2h14zM7 8v5h2V8l5-4.76V3H2v.24L7 8z"/></svg>
+                </div>
+                <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow-sm">
+                    <li><a>Item 1</a></li>
+                    <li><a>Item 2</a></li>
+                </ul>
+            </div>
+            <div class="button-container flex items-center gap-5">
+                <button class="btn btn-error">Eliminar</button>
+            </div>
         </div>
-
-        <div class="dropdown dropdown-right">
-        <div tabindex="0" role="button" class="btn m-1">
-            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" 
-            fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" 
-            d="M15 2v1.67l-5 4.759V14H6V8.429l-5-4.76V2h14zM7 8v5h2V8l5-4.76V3H2v.24L7 8z"/></svg>
-        </div>
-        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-        </ul>
-        </div>
-
-        <div class="button-container flex items-center gap-5">
-<!--             <select name="" id="" class="select">
-                <option disabled selected>Cambiar rol del usuario</option>
-                <option>Admin</option>
-            </select> -->
-            <button class="btn btn-error">Eliminar</button>
-        </div>
-
-    </div>
 
         <div class="overflow-x-auto overflow-y-auto max-h-120 mx-3">
             <table class="table">
@@ -126,33 +72,89 @@
                 </tbody>
             </table>
         </div>
-
     </div>
     <div class="drawer-side">
         <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu bg-base-200 text-base-content min-h-full w-50 flex flex-col justify-start items-center gap-17 p-3">
-        <!-- Sidebar content here -->
-        
             <li>
-            <div class="avatar avatar-placeholder">
-            <div class="bg-neutral text-neutral-content w-16 rounded-full justify-self-center">
-                <span class="text-sm">UI</span>
-            </div>
+                <div class="avatar avatar-placeholder">
+                    <div class="bg-neutral text-neutral-content w-16 rounded-full justify-self-center">
+                        <span class="text-sm">UI</span>
+                    </div>
+                </div>
             </li>
-
-        <li>
-           <a class="px-[.75em]" href="about.html">Inicio</a>
-           <a class="px-[.75em]" href="personal.html">Personal</a>
-           <a class="px-[.75em]" href="soportes.html">Soportes</a>
-           <a class="px-[.75em]" href="users.html">Usuarios</a>
-        </li>
-
+            <li>
+                <a class="px-[.75em]" href="about.html">Inicio</a>
+                <a class="px-[.75em]" href="personal.html">Personal</a>
+                <a class="px-[.75em]" href="soportes.html">Soportes</a>
+                <a class="px-[.75em]" href="users.html">Usuarios</a>
+            </li>
             <li class="mt-auto">
-            <button class="btn btn btn-soft btn-secondary">Salir</button>
+                <button class="btn btn btn-soft btn-secondary">Salir</button>
             </li>
         </ul>
     </div>
 </div>
-<script type="module" src="../src/main.js"></script>
+
+<dialog id="add_employee_modal" class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Registrar Nuevo Empleado</h3>
+    
+    <form id="new_employee_form" method="dialog" class="flex flex-col gap-4 py-4">
+      <label class="input input-bordered flex items-center gap-2">
+        Nombre:
+        <input type="text" id="nombre" class="grow" placeholder="Ej: Ana" required />
+      </label>
+      <label class="input input-bordered flex items-center gap-2">
+        Apellido:
+        <input type="text" id="apellido" class="grow" placeholder="Ej: Pérez" required />
+      </label>
+      <label class="input input-bordered flex items-center gap-2">
+        Cédula:
+        <input type="text" id="cedula" class="grow" placeholder="Ej: V-12345678" required />
+      </label>
+      <select id="departamento" class="select select-bordered w-full" required>
+        <option disabled selected value="">Selecciona un Departamento</option>
+        <option>Talento Humano</option>
+        <option>Tecnología</option>
+        <option>Administración</option>
+        <option>Contabilidad</option>
+        <option>Operaciones</option>
+      </select>
+      <div class="modal-action mt-4 justify-between">
+        <button class="btn btn-ghost">Cancelar</button>
+        <div class="flex gap-2">
+          <button type="reset" class="btn btn-outline">Vaciar</button>
+          <button type="submit" class="btn btn-primary">Añadir</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+
+<script>
+// Script simplificado que solo se encarga de abrir el modal
+document.addEventListener('DOMContentLoaded', () => {
+
+    const openModalBtn = document.getElementById('openModalBtn');
+    const addEmployeeModal = document.getElementById('add_employee_modal');
+
+    // Solo necesitamos un listener para abrir el modal
+    if (openModalBtn && addEmployeeModal) {
+        openModalBtn.addEventListener('click', () => {
+            addEmployeeModal.showModal(); // Función nativa de HTML para mostrar el diálogo
+        });
+    }
+    
+    // NOTA: No se necesita más JavaScript.
+    // El cierre del modal al hacer clic en "Añadir", "Cancelar" o el fondo oscuro
+    // es manejado automáticamente por el navegador gracias al atributo `method="dialog"` en el formulario.
+    // El botón "Vaciar" funciona por ser de tipo `type="reset"`.
+});
+</script>
+
 </body>
 </html>
